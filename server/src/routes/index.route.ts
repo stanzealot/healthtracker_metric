@@ -17,7 +17,7 @@ class Routes {
   routes(): void {
     this.router.get('/', (req: Request, res: Response) => {
     return res.status(200).json({
-        message: 'Welcome To PixelDat Expense Tracker Mobile App',
+        message: 'Welcome To PixelDat Health Tracker Metric Mobile App',
         data: {
         service: 'Health Metric Tracker',
         environment: serverConfig.NODE_ENV,

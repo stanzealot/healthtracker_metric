@@ -25,12 +25,12 @@ const config = {
             options
         ),
     development:
-        new Sequelize('postgres', 'postgres', 'Me4you6969', {
+        new Sequelize('mysql', 'mysql', 'password', {
             host: 'localhost',
-            dialect:'postgres' /* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */
+            dialect:'mysql' /* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */
         }),
 
-    stagging:
+    testing:
         new Sequelize('app', '', '', {
             dialect: 'sqlite',
             storage: './database.sqlite',
@@ -39,8 +39,8 @@ const config = {
 
 }
 
-
-const ENV = serverConfig.NODE_ENV ==='development'?'development':serverConfig.NODE_ENV ==='production'? 'production' : 'stagging'
+//Check environment the env is set to and select the db to run 
+const ENV = serverConfig.NODE_ENV ==='development'?'development':serverConfig.NODE_ENV ==='production'? 'production' : 'testing'
 const db = config[ENV];
 
 export default db;
